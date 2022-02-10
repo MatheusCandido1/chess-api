@@ -57,9 +57,6 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "post-install-cmd": [
-        "php artisan optimize"
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
