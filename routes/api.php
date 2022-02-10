@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MatchController;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,13 @@ use App\Http\Controllers\MatchController;
 
 Route::prefix('v1')->group(function () {
 
-    // Cores
+    // Match
     Route::prefix('matches')->group(function() {
         Route::get('', [MatchController::class, 'index']);
+    });
+
+    // Players
+    Route::prefix('players')->group(function() {
+        Route::get('', [PlayerController::class, 'index']);
     });
 });
