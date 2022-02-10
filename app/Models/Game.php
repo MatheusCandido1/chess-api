@@ -19,4 +19,16 @@ class Game extends Model
         'tie',
         'schedule'
     ];
+
+    protected $casts = [
+        'schedule' => 'datetime:d/m/Y H:i',
+    ];
+
+    public function whites() {
+        return $this->belongsTo('App\Models\Player', 'whites');
+    }
+
+    public function blacks() {
+        return $this->belongsTo('App\Models\Player', 'blacks');
+    }
 }

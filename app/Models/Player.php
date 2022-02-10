@@ -13,4 +13,7 @@ class Player extends Model
         'name',
     ];
 
+    public function game() {
+        return $this->hasMany('App\Models\Game');
+    }
 }

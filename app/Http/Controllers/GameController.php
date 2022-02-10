@@ -11,7 +11,7 @@ class GameController extends Controller
         try {
             $games = Game::where('status', 1)->get();
 
-            $next_game = Game::where('status', 0)->first();
+            $next_game = Game::with('whites','blacks')->where('status', 0)->first();
 
 
             return response()->json([
