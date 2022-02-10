@@ -12,6 +12,12 @@ class Match extends Model
     protected $fillable = [
         'play',
         'status',
+        'whites',
+        'blacks',
+        'winner',
+        'loser',
+        'tie',
+        'schedule'
     ];
 
 }
