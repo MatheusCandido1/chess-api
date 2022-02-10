@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MatchController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\PlayerController;
 
 /*
@@ -20,8 +20,8 @@ use App\Http\Controllers\PlayerController;
 Route::prefix('v1')->group(function () {
 
     // Match
-    Route::prefix('matches')->group(function() {
-        Route::get('', [MatchController::class, 'index']);
+    Route::prefix('games')->group(function() {
+        Route::get('', [GameController::class, 'index']);
     });
 
     // Players
