@@ -19,7 +19,6 @@ class MatchSeeder extends Seeder
             'status' => '0',
             'whites' => '1',
             'blacks' => '2',
-            'play' => '2',
             'schedule' => '2022-02-10 00:00:00',
         ]);
     }
