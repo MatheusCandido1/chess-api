@@ -16,7 +16,7 @@ class GameController extends Controller
 
             return response()->json([
                 'data' => [
-                   'game' => $games,
+                   'games' => $games,
                    'next_game' => $next_game
                 ]
             ], 200);
