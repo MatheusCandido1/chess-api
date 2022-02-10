@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Match;
+use Illuminate\Support\Facades\DB;
 
 class MatchSeeder extends Seeder
 {
@@ -14,7 +15,7 @@ class MatchSeeder extends Seeder
      */
     public function run()
     {
-        Match::create([
+        DB::table('matches')->insert([
             'play' => 'https://lichess.org/Am8n1GWW',
             'status' => '0',
             'whites' => '1',
