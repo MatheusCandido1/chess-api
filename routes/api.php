@@ -22,6 +22,7 @@ Route::prefix('v1')->group(function () {
     // Match
     Route::prefix('games')->group(function() {
         Route::get('', [GameController::class, 'index']);
+        Route::post('', [GameController::class, 'store']);
     });
 
     // Players

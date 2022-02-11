@@ -11,6 +11,7 @@ class Player extends Model
 
     protected $fillable = [
         'name',
+        'lichess_id'
     ];
 
     public function game() {

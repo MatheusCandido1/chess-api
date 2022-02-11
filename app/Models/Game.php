@@ -16,8 +16,12 @@ class Game extends Model
         'blacks',
         'winner',
         'loser',
+        'winner_color',
+        'loser_color',
         'tie',
-        'schedule'
+        'schedule',
+        'pgn',
+        'speed'
     ];
 
     protected $casts = [
@@ -30,5 +34,13 @@ class Game extends Model
 
     public function blacks() {
         return $this->belongsTo('App\Models\Player', 'blacks');
+    }
+
+    public function winner() {
+        return $this->belongsTo('App\Models\Player', 'winner');
+    }
+
+    public function loser() {
+        return $this->belongsTo('App\Models\Player', 'loser');
     }
 }

@@ -15,11 +15,13 @@ class PlayerSeeder extends Seeder
     public function run()
     {
         Player::create([
-            'name' => 'Candin'
+            'name' => 'Candin',
+            'lichess_id' => 'matheuscandido'
         ]);
 
         Player::create([
-            'name' => 'Max'
+            'name' => 'Max',
+            'lichess_id' => 'max618br'
         ]);
     }
 }

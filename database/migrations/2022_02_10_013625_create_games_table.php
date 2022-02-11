@@ -21,8 +21,12 @@ class CreateGamesTable extends Migration
             $table->integer('blacks');
             $table->integer('winner')->nullable();
             $table->integer('loser')->nullable();
+            $table->string('winner_color')->nullable();
+            $table->string('loser_color')->nullable();
             $table->boolean('tie')->nullable();
             $table->datetime('schedule')->nullable();
+            $table->string('speed')->nullable();
+            $table->text('pgn')->nullable();
             $table->timestamps();
         });
     }

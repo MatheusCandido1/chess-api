@@ -15,10 +15,11 @@ class GameSeeder extends Seeder
     public function run()
     {
         Game::create([
-            'play' => 'https://lichess.org/Am8n1GWW',
+            'play' => 'https://lichess.org/u7v51cqi',
             'status' => '0',
             'whites' => '1',
             'blacks' => '2',
+            'speed' => 'Rápida',
             'schedule' => '2022-02-10 00:00:00',
         ]);
     }
