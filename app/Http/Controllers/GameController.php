@@ -12,15 +12,14 @@ class GameController extends Controller
 
     public function getGame() {
 
-        $game = Game::where('play','like','%u7v51cqi%')->first();
+        $game = Game::where('play', 'https://lichess.org/bi1un5CV')->first();
 
-        $response = Http::accept('application/json')->get('https://lichess.org/game/export/u7v51cqi');
+        $response = Http::accept('application/json')->get('https://lichess.org/game/export/bi1un5CV');
 
-       // $white_id = $response['players']['white']['user']['id'];
+        $white_id = $response['players']['white']['user']['id'];
         $black_id = $response['players']['black']['user']['id'];
 
-        $white = Player::where('lichess_id', 'max618br')->first();
-        //$black = Player::where('lichess_id', $black_id)->first();
+        $white = Player::where('lichess_id', $white_id)->first();
         $black = Player::where('lichess_id', $black_id)->first();
 
         if($response['winner'] === 'white') {
@@ -40,6 +39,10 @@ class GameController extends Controller
         $game->status = 1;
         $game->pgn = $response['moves'];
         $game->save();
+
+        return response()->json([
+            'message' => 'Match updated'
+        ], 200);
     }
 
     public function store(Request $request) {
@@ -51,6 +54,10 @@ class GameController extends Controller
         $game->speed = 'Rápida';
         $game->schedule = $request->schedule;
         $game->save();
+
+        return response()->json([
+            'message' => 'Match created'
+        ], 201);
     }
 
 
